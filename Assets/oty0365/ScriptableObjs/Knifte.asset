@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35db49e13b2d06e46988c3d792efe4fe, type: 3}
+  m_Name: Knifte
+  m_EditorClassIdentifier: 
+  augmentName: "\uC1C4\uC120\uB3C4"
+  augmentSprite: {fileID: 1183969476, guid: 2a7120ebb6090a74c98dc33587367d7b, type: 3}
+  augmentDescription: "\uBC30\uB97C \uBD84\uC1C4\uD558\uB294 \uB300\uAC80\uC744 \uBD99\uC5EC
+    \uADFC\uC811 \uD53C\uD574\uB97C \uC785\uD78C\uB2E4."
+  augmentType: 6

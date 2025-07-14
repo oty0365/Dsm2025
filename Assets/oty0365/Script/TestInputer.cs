@@ -1,0 +1,14 @@
+using UnityEngine;
+
+public class TestInputer : MonoBehaviour
+{
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AugmentManager.Instance.AugmentSelection();
+        }
+    }
+
+}
