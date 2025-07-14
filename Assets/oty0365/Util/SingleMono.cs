@@ -8,7 +8,7 @@ public abstract class SingleMono<T> : MonoBehaviour where T : MonoBehaviour
         get
         {
             if (_instance == null)
-                _instance = FindObjectOfType<T>();
+                _instance =FindFirstObjectByType<T>();
             return _instance;
         }
     }

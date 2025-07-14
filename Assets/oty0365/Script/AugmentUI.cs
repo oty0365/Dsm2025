@@ -36,7 +36,7 @@ public class AugmentUI : MonoBehaviour
 
     public void AugmentSelection(int index)
     {
-        AugmentManager.Instance.Execute(augmentDatas[index].augmentType);
+        ObjectPooler.Instance.Get(augmentDatas[index].augmentPrefab, Vector2.zero, new Vector3(0, 0, 0));
         augmentPanel.SetActive(false);
     }
 }

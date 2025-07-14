@@ -2,24 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AugmentType
-{
-    HpUp,
-    FullHp,
-    MoveSpeedUp,
-    MoreBullet,
-    Shiled,
-    Execute,
-    Knife,
-    Boom
-}
-
 public class AugmentManager : HalfSingleMono<AugmentManager>
 {
     public event Action<AugmentData[]> setUi;
-    private Dictionary<AugmentType, Action> augments = new();
+    //private Dictionary<AugmentType, Action> augments = new();
     [SerializeField] AugmentDatas augmentDatas;
-    public void UpLoad(AugmentType type,Action action)
+    /*public void UpLoad(AugmentType type,Action action)
     {
         if (augments.ContainsKey(type))
         {
@@ -37,7 +25,7 @@ public class AugmentManager : HalfSingleMono<AugmentManager>
         {
             augments[type]?.Invoke();
         }
-    }
+    }*/
 
     public void AugmentSelection()
     {

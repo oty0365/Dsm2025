@@ -16,4 +16,4 @@ MonoBehaviour:
   augmentSprite: {fileID: -1876769416, guid: 2a7120ebb6090a74c98dc33587367d7b, type: 3}
   augmentDescription: "\uB2F9\uC2E0\uC740 \uC784\uC9C4\uC65C\uB780\uC744 \uB9C9\uC744
     \uC601\uC6C5\uC785\uB2C8\uB2E4.\n\uC77C\uC5B4\uB098\uC138\uC694, \uB2E4\uC2DC\uD55C\uBC88"
-  augmentType: 1
+  augmentPrefab: {fileID: 8643725068125673110, guid: dc6409356b76d1248bd3dd963f170c9b, type: 3}
