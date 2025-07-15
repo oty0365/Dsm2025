@@ -1,0 +1,17 @@
+{
+    "name": "OtyAugments",
+    "rootNamespace": "",
+    "references": [
+        "GUID:579315c5f063f4d4ca5361ce76ce2243",
+        "GUID:ace9338fb4783064891839c7719914ad"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
