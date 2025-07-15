@@ -30,6 +30,7 @@ public class AugmentManager : HalfSingleMono<AugmentManager>
     public void AugmentSelection()
     {
         setUi?.Invoke(GetRandomAugments());
+        Time.timeScale = 0;
     }
     
     private AugmentData[] GetRandomAugments()

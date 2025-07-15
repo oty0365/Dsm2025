@@ -7,7 +7,7 @@ public class TestInputer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            AugmentManager.Instance.AugmentSelection();
+            PlayerStatus.Instance.SetExp(PlayerStatus.Instance.PlayerExp+20);
         }
     }
 
