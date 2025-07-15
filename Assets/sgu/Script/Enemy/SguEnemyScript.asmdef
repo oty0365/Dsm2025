@@ -1,0 +1,17 @@
+{
+    "name": "SguEnemyScript",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ace9338fb4783064891839c7719914ad",
+        "GUID:79aedd04c8d03234d83e31a5a93a1817"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
