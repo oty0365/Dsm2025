@@ -625,6 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8e813def3f0d54b83afbe1d5c401c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxUpgradeCount: 7
   rotationNumber: -150
 --- !u!1 &366902125
 GameObject:
@@ -7539,7 +7540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560e3e0b664a8e846963a7eb74d66de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 6
+  rotateSpeed: 5
 --- !u!1 &1639121837
 GameObject:
   m_ObjectHideFlags: 0
@@ -8246,7 +8247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3d00975292fe842ab676d0d258e051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 4
+  followSpeed: 1.2
 --- !u!1 &2034147700
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class Knife : MonoBehaviour,IAugment,IPoolingObject
 {
-    //[SerializeField] private float amount;
+    [SerializeField] private WeaponSetter setter;
     public void Execute()
     {
-        //칼 배치
-        OnDeathInit();
+        WeaponCore.Instance.Equip(setter);
         ObjectPooler.Instance.Return(gameObject);
     }
 

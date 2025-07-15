@@ -4,24 +4,30 @@ public class WeaponSetter : MonoBehaviour
 {
     [Header("Weapon Settings")]
     public GameObject weaponPrefab; 
-    public float distance = 2f;     
+    public float distance = 2f;
+    public int currentUpgradePoint = 1;
+    public AugmentData parentData;
     
     void Start()
     {
-        CreateWeapons();
+        SetWeapons();
     }
     
-    void CreateWeapons()
+    public void SetWeapons()
     {
+        for (int i = gameObject.transform.childCount - 1; i >= 0; i--)
+        {
+            Destroy(gameObject.transform.GetChild(i).gameObject);
+        }
         if (weaponPrefab == null)
         {
             Debug.LogError("Weapon prefab is not assigned!");
             return;
         }
         
-        float angleStep = 360f / PlayerStatus.Instance.PlayerBulletCount;  
+        float angleStep = 360f / currentUpgradePoint;  
         
-        for (int i = 0; i < PlayerStatus.Instance.PlayerBulletCount; i++)
+        for (int i = 0; i < currentUpgradePoint; i++)
         {
             float angle = i * angleStep;  
             float radian = angle * Mathf.Deg2Rad;  

@@ -7,6 +7,12 @@ public class AugmentManager : HalfSingleMono<AugmentManager>
     public event Action<AugmentData[]> setUi;
     //private Dictionary<AugmentType, Action> augments = new();
     [SerializeField] AugmentDatas augmentDatas;
+    private List<AugmentData> _augmentList = new();
+
+    public void Start()
+    {
+        _augmentList = new List<AugmentData>(augmentDatas.datas);
+    }
     /*public void UpLoad(AugmentType type,Action action)
     {
         if (augments.ContainsKey(type))
@@ -32,6 +38,11 @@ public class AugmentManager : HalfSingleMono<AugmentManager>
         setUi?.Invoke(GetRandomAugments());
         Time.timeScale = 0;
     }
+
+    public void RemoveData(AugmentData data)
+    {
+        _augmentList.Remove(data);
+    }
     
     private AugmentData[] GetRandomAugments()
     {
@@ -41,7 +52,7 @@ public class AugmentManager : HalfSingleMono<AugmentManager>
             return augmentDatas.datas;
         }
 
-        List<AugmentData> dataList = new List<AugmentData>(augmentDatas.datas);
+        List<AugmentData> dataList = _augmentList;
         
         for (var i = 0; i < 3; i++)
         {
