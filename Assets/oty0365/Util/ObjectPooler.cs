@@ -11,7 +11,12 @@ public enum PoolObjectType
     ShiledAugment,
     ExecuteAugment,
     KnifeAugment,
-    BoomAugment
+    BoomAugment,
+    CloseRangeEnemyMove,
+    MiddleRangeEnemyMove,
+    LongRangeEnemyMove,
+    DashEnemyMove,
+    BulletObject
 }
 
 public class ObjectPooler : HalfSingleMono<ObjectPooler>
