@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class FullHp : MonoBehaviour,IAugment,IPoolingObject
 {
-    //[SerializeField] private float amount;
     public void Execute()
     {
-        //플레이어 hp++
-        OnDeathInit();
+        PlayerStatus.Instance.SetHp(PlayerStatus.Instance.PlayerMaxHp);
         ObjectPooler.Instance.Return(gameObject);
     }
 

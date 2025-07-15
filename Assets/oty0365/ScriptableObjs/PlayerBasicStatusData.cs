@@ -9,4 +9,5 @@ public class PlayerBasicStatusData : ScriptableObject
     public float playerDef;
     public float playerMaxExp;
     public float playerAttackSpeed;
+    public int playerBulletCount;
 }

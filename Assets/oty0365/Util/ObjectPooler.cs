@@ -16,7 +16,9 @@ public enum PoolObjectType
     MiddleRangeEnemyMove,
     LongRangeEnemyMove,
     DashEnemyMove,
-    BulletObject
+    BulletObject,
+    AtkUpAugment,
+    DefUpAugment
 }
 
 public class ObjectPooler : HalfSingleMono<ObjectPooler>

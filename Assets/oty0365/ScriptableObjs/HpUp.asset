@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35db49e13b2d06e46988c3d792efe4fe, type: 3}
   m_Name: HpUp
   m_EditorClassIdentifier: 
-  augmentName: "\uAC15\uC778\uD55C \uC815\uC2E0\uB825"
+  augmentName: "\uC815\uC2E0 \uC218\uC591"
   augmentSprite: {fileID: 2022794841, guid: 2a7120ebb6090a74c98dc33587367d7b, type: 3}
   augmentDescription: "\uD22C\uD63C\uC744 \uB2E4\uC838 \uCD5C\uB300\uCCB4\uB825\uC744
-    10\uC62C\uB9B0\uB2E4"
+    <color=green>10</color>\uC62C\uB9B0\uB2E4"
   augmentPrefab: {fileID: 1282878007093682411, guid: 87932d5ef23af5940a5eaca4aa0ea53f, type: 3}

@@ -18,3 +18,4 @@ MonoBehaviour:
   playerDef: 0
   playerMaxExp: 50
   playerAttackSpeed: 1
+  playerBulletCount: 1

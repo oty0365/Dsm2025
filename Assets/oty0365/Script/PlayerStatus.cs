@@ -5,7 +5,14 @@ using UnityEngine;
 public class PlayerStatus : HalfSingleMono<PlayerStatus>
 {
     public event Action<float> OnMaxExp;
+    public event Action<int> OnLevelUp;
     public event Action<float> OnExp;
+    public event Action<float> OnAtk;
+    public event Action<float> OnDef;
+    public event Action<float,float> OnHp;
+    
+    [SerializeField] private Sprite[] boatArray;
+    [SerializeField] private SpriteRenderer boatSprite;
     [SerializeField] private PlayerBasicStatusData playerBasicStatusData;
     
     private float _playerMaxHp;
@@ -17,6 +24,7 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
     private float _playerExp;
     private int _playerLevel;
     private float _playerMaxExp;
+    private int _playerBulletCount;
 
     public float PlayerMaxHp
     {
@@ -25,13 +33,14 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
         {
             if (value != _playerMaxHp)
             {
-                _playerHp = value;
+                _playerMaxHp = value;
             }
 
             if (value < PlayerHp)
             {
                 PlayerHp = value;
             }
+            OnHp?.Invoke(PlayerHp,_playerMaxHp);
         }
     }
     
@@ -54,6 +63,7 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
             {
                 _playerHp = PlayerMaxHp;
             }
+            OnHp?.Invoke(_playerHp, _playerMaxHp);
         }
     }
 
@@ -66,6 +76,7 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
             {
                 _playerDef = value;
             }
+            OnDef?.Invoke(_playerDef);
         }
     }
 
@@ -77,6 +88,7 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
             if (_playerAtk != value)
             {
                 _playerAtk = value;
+                OnAtk?.Invoke(_playerAtk);
             }
         }
     }
@@ -185,13 +197,48 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
             if (_playerLevel != value)
             {
                 _playerLevel = value;
+                OnLevelUp?.Invoke(_playerLevel);
+                if (_playerLevel < 7)
+                {
+                    boatSprite.sprite = boatArray[0];
+                }
+                else if (_playerLevel < 15)
+                {
+                    boatSprite.sprite = boatArray[1];
+                }
+                else
+                {
+                    boatSprite.sprite = boatArray[2];
+                }
             }
         }
+    }
+    
+    public int PlayerBulletCount
+    {
+        get => _playerBulletCount;
+        private set
+        {
+            if (_playerBulletCount != value)
+            {
+                _playerBulletCount = value;
+            }
+        }
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        PlayerBulletCount = playerBasicStatusData.playerBulletCount;
     }
     private void Start()
     {
         OnMaxExp += PlayerStatusUi.Instance.SetMaxExp;
         OnExp += PlayerStatusUi.Instance.SetExp;
+        OnLevelUp += PlayerStatusUi.Instance.SetLevel;
+        OnAtk += PlayerStatusUi.Instance.SetAtk;
+        OnDef += PlayerStatusUi.Instance.SetDef;
+        OnHp += PlayerStatusUi.Instance.SetHp;
         
         PlayerMaxHp = playerBasicStatusData.playerMaxHp;
         PlayerHp = PlayerMaxHp;
@@ -207,5 +254,25 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
     public void SetExp(float exp)
     {
         PlayerExp = exp;
+    }
+
+    public void SetMaxHp(float hp)
+    {
+        PlayerMaxHp = hp;
+    }
+
+    public void SetHp(float hp)
+    {
+        PlayerHp = hp;
+    }
+
+    public void SetAtk(float atk)
+    {
+        PlayerAtk = atk;
+    }
+
+    public void SetDef(float def)
+    {
+        PlayerDef = def;
     }
 }
