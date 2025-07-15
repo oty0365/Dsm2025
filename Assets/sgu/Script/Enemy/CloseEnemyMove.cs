@@ -8,14 +8,13 @@ public class CloseEnemyMove : MonoBehaviour, IEnemyMove, IPoolingObject
 {
     private Transform player;
     private PlayerState playerState;
-    
-    
+
     private float firstDamageCooldown;
     
     [SerializeField]
     private float damageCooldown = 1f;
     [SerializeField]
-    private int damage;
+    private float damage;
 
     private void Awake()
     {
@@ -43,8 +42,7 @@ public class CloseEnemyMove : MonoBehaviour, IEnemyMove, IPoolingObject
     {
         if (damageCooldown <= 0)
         {
-            playerState.Health -= damage;
-            damageCooldown = firstDamageCooldown;
+            DamageEnemy.damageEnemy(damage);
         }
         
     }
@@ -59,7 +57,7 @@ public class CloseEnemyMove : MonoBehaviour, IEnemyMove, IPoolingObject
         
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
