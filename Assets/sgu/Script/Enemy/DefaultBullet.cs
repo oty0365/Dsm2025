@@ -13,8 +13,11 @@ public class DefaultBullet : MonoBehaviour, IBulletObject, IPoolingObject
     private Transform player;
     private Vector3 playerPosition;
     PlayerState playerState;
+    private DamageEnemy damageEnemy;
+    
     private void Awake()
     {
+        damageEnemy = GetComponent<DamageEnemy>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerState = player.GetComponent<PlayerState>();
     }
@@ -37,7 +40,7 @@ public class DefaultBullet : MonoBehaviour, IBulletObject, IPoolingObject
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            playerState.Health -= bulletDamage;
+            DamageEnemy.damageEnemy(bulletDamage);
             ObjectPooler.Instance.Return(gameObject);
         }
     }
