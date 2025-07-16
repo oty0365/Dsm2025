@@ -85,7 +85,6 @@ public class RangedAttackBoatAttack : IState
     
     public void Enter()
     {
-        Debug.Log("Attak");
         attackTimer = 0f;
     }
 

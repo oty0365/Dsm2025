@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc1a8a340661cf34aabaa2f13394c9a2, type: 3}
-  m_Name: RaptorsBoat
+  m_Name: DashBoat
   m_EditorClassIdentifier: 
   health: 10
-  attackRange: 1
-  moveSpeed: 1.49
-  expAmount: 8
+  attackRange: 6
+  moveSpeed: 1.8
+  expAmount: 20

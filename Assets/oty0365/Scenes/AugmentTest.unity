@@ -422,7 +422,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -8230,7 +8230,6 @@ GameObject:
   - component: {fileID: 1445236915}
   - component: {fileID: 1445236914}
   - component: {fileID: 1445236913}
-  - component: {fileID: 1445236912}
   - component: {fileID: 1445236911}
   - component: {fileID: 1445236910}
   - component: {fileID: 1445236909}
@@ -8273,7 +8272,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -8315,24 +8314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63140d9a7980d2748b69aa390f349261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1445236912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445236908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bca70563e6c2fc344b74c5207958855f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 8ce70350f4c748b47b4efa23f1f2edd3, type: 2}
-  hitModule: {fileID: 1445236916}
-  rb2D: {fileID: 1445236913}
-  fsm: {fileID: 1445236911}
-  sr: {fileID: 1445236914}
-  hitEffect: {fileID: 3650066380682929340, guid: 241cfddef527478428c10d0708c845db, type: 3}
 --- !u!50 &1445236913
 Rigidbody2D:
   serializedVersion: 5
@@ -8425,7 +8406,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.68, y: -1.96, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 951329128}
@@ -8444,8 +8425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650b08ef6e2b7174899a244f8ec4fd9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
-  infiniteTime: 0.5
+  damage: 8
+  infiniteTime: 0.9
 --- !u!120 &1445236917
 LineRenderer:
   serializedVersion: 2
@@ -8470,7 +8451,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8565,18 +8546,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64e14c75a8728f46bc0c82b389d3ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 0}
-  hitModule: {fileID: 0}
-  rb2D: {fileID: 0}
-  fsm: {fileID: 0}
-  sr: {fileID: 0}
-  hitEffect: {fileID: 0}
-  dashDistance: 15
-  dashDelay: 2
+  enemyData: {fileID: 11400000, guid: 02c69ebd6ed109b468bde837393641ba, type: 2}
+  hitModule: {fileID: 1445236916}
+  rb2D: {fileID: 1445236913}
+  fsm: {fileID: 1445236911}
+  sr: {fileID: 1445236914}
+  hitEffect: {fileID: 3650066380682929340, guid: 241cfddef527478428c10d0708c845db, type: 3}
+  dashDistance: 6
+  dashDelay: 1.4
   dashSpeed: 20
   stopDistance: 0.1
-  dashTargetIndicator: {fileID: 0}
-  lineRenderer: {fileID: 0}
+  lineExtendSpeed: 2
+  dashCooldown: 1
+  dashTargetIndicator: {fileID: 1597535812}
+  lineRenderer: {fileID: 1445236917}
 --- !u!1 &1544789207
 GameObject:
   m_ObjectHideFlags: 0
@@ -9023,8 +9006,8 @@ Transform:
   m_GameObject: {fileID: 1597535812}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 2.9714284, y: 5.616666, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.21666668, y: 0.21666668, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1445236915}

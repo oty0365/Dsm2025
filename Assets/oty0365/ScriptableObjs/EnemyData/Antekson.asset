@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Antekson
   m_EditorClassIdentifier: 
   health: 25
-  damage: 2
   attackRange: 1.15
-  attackSpeed: 0.4
-  moveSpeed: 1.45
+  moveSpeed: 1.35
   expAmount: 20
