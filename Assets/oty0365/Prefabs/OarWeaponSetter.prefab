@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 3371585573686522086, guid: f7f29e83a6afd824ba0c3ca1238d47f6, type: 3}
   distance: 0.9
+  currentUpgradePoint: 1
+  parentData: {fileID: 11400000, guid: b8900ac62ece63c47bbc655973ed81a9, type: 2}

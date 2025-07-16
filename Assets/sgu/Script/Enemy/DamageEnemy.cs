@@ -20,7 +20,7 @@ public class DamageEnemy : MonoBehaviour
         if(!isInvincible && playerState.Health > 0)
         {
             playerState.Health -= damage;
-            StartCoroutine(invincibility()); // 데미지 받은 후 무적 상태 시작
+            StartCoroutine(invincibility());
         }
     }
 

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35db49e13b2d06e46988c3d792efe4fe, type: 3}
+  m_Name: Oar
+  m_EditorClassIdentifier: 
+  augmentName: "\uB178"
+  augmentSprite: {fileID: -1185019394295298291, guid: 796aed675bf249d428f624e1e209cf77, type: 3}
+  augmentDescription: "\uAC00\uC7A5 \uC6D0\uCD08\uC801\uC778 \uBC30\uC758 \uACF5\uACA9\uC218\uB2E8\uC774\uB2E4.\n3\uC758
+    \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
+  augmentPrefab: {fileID: 5202375917226360745, guid: fe788c6bc71e71f4ebaca5c721a4a198, type: 3}

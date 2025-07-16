@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ea049fe65262343a986b696f6b51ca, type: 3}
-  m_Name: PlayerBasicStatusData
+  m_Script: {fileID: 11500000, guid: fc1a8a340661cf34aabaa2f13394c9a2, type: 3}
+  m_Name: Antekson
   m_EditorClassIdentifier: 
-  playerMaxHp: 100
-  playerMoveSpeed: 2
-  playerAtk: 1
-  playerDef: 0
-  playerMaxExp: 50
-  playerAttackSpeed: 1
-  playerBulletCount: 1
+  health: 25
+  damage: 2
+  attackRange: 1.15
+  attackSpeed: 0.4
+  moveSpeed: 1.45
+  expAmount: 20

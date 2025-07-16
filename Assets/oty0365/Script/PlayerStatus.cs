@@ -1,9 +1,12 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 
 public class PlayerStatus : HalfSingleMono<PlayerStatus>
 {
+    public bool isInfinite;
     public event Action<float> OnMaxExp;
     public event Action<int> OnLevelUp;
     public event Action<float> OnExp;
@@ -14,6 +17,10 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
     [SerializeField] private Sprite[] boatArray;
     [SerializeField] private SpriteRenderer boatSprite;
     [SerializeField] private PlayerBasicStatusData playerBasicStatusData;
+    [SerializeField] private Collider2D collider2D;
+    [SerializeField] private LayerMask layerMask;
+    [SerializeField] private LayerMask originMask;
+    [SerializeField] private GameObject playerHitParticle;
     
     private float _playerMaxHp;
     private float _playerHp;
@@ -25,6 +32,7 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
     private int _playerLevel;
     private float _playerMaxExp;
     private int _playerBulletCount;
+    private Coroutine _infiniteTimeFlow;
 
     public float PlayerMaxHp
     {
@@ -51,6 +59,11 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
         {
             if (value != _playerHp)
             {
+                if (value < _playerHp)
+                {
+                    ObjectPooler.Instance.Get(playerHitParticle,gameObject.transform.position,new Vector3(-90,0,0));
+                    CammeraManager.Instance.ShakeCamera(0.4f,0.2f);
+                }
                 _playerHp = value;
             }
 
@@ -85,11 +98,9 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
         get => _playerAtk;
         private set
         {
-            if (_playerAtk != value)
-            {
                 _playerAtk = value;
                 OnAtk?.Invoke(_playerAtk);
-            }
+            
         }
     }
 
@@ -274,5 +285,28 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
     public void SetDef(float def)
     {
         PlayerDef = def;
+    }
+
+    private IEnumerator InfiniteTimeFlow(float time)
+    {
+        collider2D.excludeLayers = layerMask;
+        isInfinite = true;
+        yield return new WaitForSeconds(time);
+        isInfinite = false;
+        collider2D.excludeLayers = originMask;
+    }
+
+    public void GetDamage(float damage, float infiniteTime)
+    {
+        SetHp(PlayerHp - damage);
+
+        if (_infiniteTimeFlow != null)
+        {
+            StopCoroutine(_infiniteTimeFlow);
+            isInfinite =  false;
+            collider2D.excludeLayers = originMask;
+        }
+
+        _infiniteTimeFlow = StartCoroutine(InfiniteTimeFlow(infiniteTime));
     }
 }
