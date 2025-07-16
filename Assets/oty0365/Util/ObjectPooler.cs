@@ -12,11 +12,19 @@ public enum PoolObjectType
     ExecuteAugment,
     KnifeAugment,
     BoomAugment,
-    CloseRangeEnemyMove,
-    MiddleRangeEnemyMove,
-    LongRangeEnemyMove,
+    CloseDealEnemyMove,
+    CloseTankEnemyMove,
+    RangedEnemyMove,
     DashEnemyMove,
-    BulletObject
+    BulletObject,
+    AtkUpAugment,
+    DefUpAugment,
+    OarAugment,
+    HitParticle,
+    ExpGiver,
+    FlyingBoom,
+    PlayerHitParticle,
+    FlyingEnemyBoom
 }
 
 public class ObjectPooler : HalfSingleMono<ObjectPooler>

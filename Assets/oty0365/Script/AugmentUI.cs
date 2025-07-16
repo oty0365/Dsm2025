@@ -37,6 +37,7 @@ public class AugmentUI : MonoBehaviour
     public void AugmentSelection(int index)
     {
         ObjectPooler.Instance.Get(augmentDatas[index].augmentPrefab, Vector2.zero, new Vector3(0, 0, 0));
+        Time.timeScale = 1;
         augmentPanel.SetActive(false);
     }
 }

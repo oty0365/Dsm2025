@@ -1,25 +1,44 @@
+using System.Collections;
+using TMPro;
 using Unity.Collections;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
     public float scoreCoolTime = 1f;
-    private float firstCoolTime;
+    //private float firstCoolTime;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    private int _score;
     
-    [ReadOnly]
-    public int score = 0;
+    public int Score
+    {
+        get=>_score;
+        private set
+        { 
+            _score = value;
+            scoreText.text = _score.ToString();
+        }
+    }
     void Start()
     {
-        firstCoolTime = scoreCoolTime;
+        StartCoroutine(TimerFlow());
     }
 
-    void Update()
+    /*void Update()
     {
         scoreCoolTime -= Time.deltaTime;
         if (scoreCoolTime <= 0)
         {
             scoreCoolTime = firstCoolTime;
-            score++;
+            Score++;
+        }
+    }*/
+    private IEnumerator TimerFlow()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(scoreCoolTime);
+            Score++;
         }
     }
 }

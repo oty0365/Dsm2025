@@ -1,16 +1,23 @@
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : HalfSingleMono<PlayerMove>
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private Rigidbody2D rb2D;
+    public float _horizontal;
+    public float _vertical;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    void FixedUpdate()
+    {
+        rb2D.linearVelocity = new Vector2(_horizontal, _vertical).normalized*PlayerStatus.Instance.PlayerMoveSpeed;
+    }
+    
     void Update()
     {
-        
+        _horizontal = Input.GetAxisRaw("Horizontal");
+        _vertical = Input.GetAxisRaw("Vertical");
     }
 }

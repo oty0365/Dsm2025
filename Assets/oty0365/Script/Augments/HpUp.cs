@@ -5,8 +5,8 @@ public class HpUp : MonoBehaviour,IAugment,IPoolingObject
     [SerializeField] private float amount;
     public void Execute()
     {
-        //플레이어 hp++
-        OnDeathInit();
+        PlayerStatus.Instance.SetMaxHp(PlayerStatus.Instance.PlayerMaxHp+amount);
+        PlayerStatus.Instance.SetHp(PlayerStatus.Instance.PlayerHp+amount);
         ObjectPooler.Instance.Return(gameObject);
     }
 
