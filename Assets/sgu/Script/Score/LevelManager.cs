@@ -18,13 +18,13 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        if (Mathf.Approximately(levelCycle * stageLevel, scoreManager.Score))
+       /* if (Mathf.Approximately(levelCycle * stageLevel, scoreManager.Score))
         {
             stageLevel++;
             enemySpawn.spawnCoolDown *= (2f / 3f);
             enemySpawn.enemy.Add(enemySpawn.enemy[Random.Range(3, enemySpawn.enemy.Count)]);
             //Debug.Log($"스테이지 레벨: {stageLevel}");
             levelCycle = firstLevelCycle;
-        }
+        }*/
     }
 }

@@ -7101,6 +7101,7 @@ GameObject:
   - component: {fileID: 1361438492}
   - component: {fileID: 1361438493}
   - component: {fileID: 1361438494}
+  - component: {fileID: 1361438495}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7177,6 +7178,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exp: {fileID: 2609676869748365458, guid: fdaa34b85136f1f488412b67fe8dcd3b, type: 3}
+--- !u!114 &1361438495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361438488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69254da6607a8464fbf09acff8de9eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnCoolDown: 3
+  distance: 10
+  unlockRate:
+  - enemy: {fileID: 3333990891916252478, guid: fa9cd81436b5b9744a39bca42c30407c, type: 3}
+    stage: 0
+  - enemy: {fileID: 7618340959313969503, guid: ae5360ab6ba295449840547ae8f927f9, type: 3}
+    stage: 40
+  - enemy: {fileID: 4388394676776281813, guid: 26959cb31a8dced439f40de57d90fa21, type: 3}
+    stage: 80
+  - enemy: {fileID: 419116982083715257, guid: 3f0cd5e92a52aca4c929c698819f7f8e, type: 3}
+    stage: 120
 --- !u!1 &1544789207
 GameObject:
   m_ObjectHideFlags: 0
@@ -7670,7 +7694,7 @@ Transform:
   m_GameObject: {fileID: 1606461547}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.02, y: 2.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7751,7 +7775,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0054141283, y: -0.08263242}
+  m_Offset: {x: -0.0016647726, y: -0.06370664}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7761,7 +7785,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5968534, y: 1.4047353}
+  m_Size: {x: 0.48512295, y: 1.1849289}
   m_EdgeRadius: 0
 --- !u!1 &1639121837
 GameObject:

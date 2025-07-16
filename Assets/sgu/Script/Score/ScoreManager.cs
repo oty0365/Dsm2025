@@ -3,7 +3,7 @@ using TMPro;
 using Unity.Collections;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : HalfSingleMono<ScoreManager>
 {
     public float scoreCoolTime = 1f;
     //private float firstCoolTime;
@@ -17,6 +17,7 @@ public class ScoreManager : MonoBehaviour
         { 
             _score = value;
             scoreText.text = _score.ToString();
+            EnemySpawn.Instance.TryUnlockEnemies(_score); 
         }
     }
     void Start()

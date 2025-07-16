@@ -119,7 +119,6 @@ public class RangedAttackBoatAttack : IState
     
     private void FireBullet()
     {
-        Debug.Log("Fire Bullet");
         var a= ObjectPooler.Instance.Get(boat.bullet, boat.gameObject.transform.position, new Vector3(0,0,0));
         Vector2 direction = (PlayerStatus.Instance.gameObject.transform.position - boat.transform.position);
         a.GetComponent<FlyingBoom>().Fire(direction);

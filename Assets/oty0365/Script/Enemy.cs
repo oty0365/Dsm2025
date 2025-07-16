@@ -32,6 +32,8 @@ public abstract class Enemy : MonoBehaviour
     public void Initialize()
     {
         _metProps = new MaterialPropertyBlock();
+        sr.GetPropertyBlock(_metProps);
+        _metProps.SetFloat("_Progress", 0);
         CurrentHp = enemyData.health;
     }
     public void FacePlayer()
