@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1a8a340661cf34aabaa2f13394c9a2, type: 3}
   m_Name: RaptorsBoat
   m_EditorClassIdentifier: 
-  health: 10
+  health: 3
   attackRange: 1
   moveSpeed: 1.49
   expAmount: 8

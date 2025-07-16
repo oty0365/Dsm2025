@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentName: "\uC1C4\uC120\uB3C4"
   augmentSprite: {fileID: 1183969476, guid: 2a7120ebb6090a74c98dc33587367d7b, type: 3}
-  augmentDescription: "\uBC30\uB97C \uBD84\uC1C4\uD558\uB294 \uB300\uAC80\uC744 \uBD99\uC5EC
-    \uADFC\uC811 \uD53C\uD574\uB97C \uC785\uD78C\uB2E4."
+  augmentDescription: "\uBC30\uB97C \uBD84\uC1C4\uD558\uB294 \uCCA0\uD310\uC744 \uAE54\uC544
+    \uC911\uAC70\uB9AC \uD53C\uD574\uB97C \uC785\uD799\uB2C8\uB2E4"
   augmentPrefab: {fileID: 5202375917226360745, guid: 391ad633bcbf94a4fb62e9430952d45a, type: 3}

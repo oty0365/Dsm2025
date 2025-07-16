@@ -2,24 +2,52 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-public class EnemySpawn : MonoBehaviour
+[System.Serializable]
+public class EnemyUnlockRate
+{
+    public GameObject enemy;
+    public int stage;
+}
+
+public class EnemySpawn : HalfSingleMono<EnemySpawn>
 {
     public float spawnCoolDown = 3f;
     [SerializeField]
     private float distance = 5f;
     private GameObject player;
-    public List<GameObject> enemy;
+    public List<EnemyUnlockRate> unlockRate;
+    private List<GameObject> enemy = new();
     
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = PlayerStatus.Instance.gameObject;
         StartCoroutine(SpawnEnemy());
     }
-
     
+    public void TryUnlockEnemies(int currentScore)
+    {
+        List<EnemyUnlockRate> unlocked = new List<EnemyUnlockRate>();
+
+        foreach (var data in unlockRate)
+        {
+            if (data.stage <= currentScore)
+            {
+                if (!enemy.Contains(data.enemy))
+                {
+                    enemy.Add(data.enemy);
+                }
+                unlocked.Add(data);
+            }
+        }
+        
+        foreach (var data in unlocked)
+        {
+            unlockRate.Remove(data);
+        }
+    }
+
 
     IEnumerator SpawnEnemy()
     {
@@ -29,7 +57,11 @@ public class EnemySpawn : MonoBehaviour
             float x = Mathf.Cos(ran * Mathf.Deg2Rad) * distance;
             float y = Mathf.Sin(ran * Mathf.Deg2Rad) * distance;
             Vector3 pos = player.transform.position + new Vector3(x, y, 0);
-            ObjectPooler.Instance.Get(enemy[Random.Range(0, enemy.Count)], pos, new Vector3(0, 0, 0));
+            if (enemy.Count > 0)
+            {
+                ObjectPooler.Instance.Get(enemy[Random.Range(0, enemy.Count)], pos, new Vector3(0, 0, 0));
+            }
+
             yield return new WaitForSeconds(spawnCoolDown);
         }
     }

@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentName: "\uB178"
   augmentSprite: {fileID: -1185019394295298291, guid: 796aed675bf249d428f624e1e209cf77, type: 3}
-  augmentDescription: "\uAC00\uC7A5 \uC6D0\uCD08\uC801\uC778 \uBC30\uC758 \uACF5\uACA9\uC218\uB2E8\uC774\uB2E4.\n3\uC758
-    \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4."
+  augmentDescription: "\uAC00\uC7A5 \uC6D0\uCD08\uC801\uC778 \uBC30\uC758 \uACF5\uACA9\uC218\uB2E8\uC785\uB2C8\uB2E4"
   augmentPrefab: {fileID: 5202375917226360745, guid: fe788c6bc71e71f4ebaca5c721a4a198, type: 3}
