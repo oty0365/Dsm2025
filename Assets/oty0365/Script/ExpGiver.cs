@@ -19,6 +19,7 @@ public class ExpGiver : MonoBehaviour,IPoolingObject
             yield return null;
         }
         PlayerStatus.Instance.SetExp(PlayerStatus.Instance.PlayerExp+expAmount);
+        SoundManager.Instance.PlaySFX("Consume");
         ObjectPooler.Instance.Return(gameObject);
     }
 

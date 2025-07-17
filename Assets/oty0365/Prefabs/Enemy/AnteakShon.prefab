@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 8ce70350f4c748b47b4efa23f1f2edd3, type: 2}
+  trailRenderer: {fileID: 4518288875645439904}
   hitModule: {fileID: 2122539323672634948}
   rb2D: {fileID: 2443441670414255750}
   fsm: {fileID: 7605410252601059861}

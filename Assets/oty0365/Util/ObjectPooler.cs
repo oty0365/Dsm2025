@@ -24,7 +24,9 @@ public enum PoolObjectType
     ExpGiver,
     FlyingBoom,
     PlayerHitParticle,
-    FlyingEnemyBoom
+    FlyingEnemyBoom,
+    SFXObject,
+    SpeedUpAugment,
 }
 
 public class ObjectPooler : HalfSingleMono<ObjectPooler>

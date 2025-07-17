@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/sgu/Scenes/MainScenes.unity
     guid: 204b8daf2b05ae44085bd0a7dee2c089
   - enabled: 1
-    path: Assets/oty0365/Scenes/AugmentTest.unity
+    path: Assets/oty0365/Scenes/IntoScene.unity
+    guid: 910e990f9bff4ef409be677cc9a0db1d
+  - enabled: 1
+    path: Assets/oty0365/Scenes/IngameScene.unity
     guid: a057298c48fe19d4e84850e4c5594ab9
+  - enabled: 1
+    path: Assets/oty0365/Scenes/OuttoScene.unity
+    guid: aeab7c852a1f9174c972c0022444a083
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

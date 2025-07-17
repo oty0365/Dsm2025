@@ -15,5 +15,5 @@ MonoBehaviour:
   augmentName: "\uC1C4\uC790\uAC11 \uC815\uBE44"
   augmentSprite: {fileID: 21300000, guid: 3bf53d41c8c523f4c974aba109bc5b15, type: 3}
   augmentDescription: "\uC1C4\uC790\uAC11\uC744 \uC815\uAC80\uD574\uC11C \uBC29\uC5B4\uB825\uC744
-    <color=purple>1</color>\uB9CC\uD07C \uC62C\uB9BD\uB2C8\uB2E4"
+    <color=purple>\uFF12</color>\uB9CC\uD07C \uC62C\uB9BD\uB2C8\uB2E4"
   augmentPrefab: {fileID: 1282878007093682411, guid: fb83d28715bc1db469b225e7b5088547, type: 3}

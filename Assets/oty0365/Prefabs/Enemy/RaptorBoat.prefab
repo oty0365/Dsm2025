@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 32ba74e6d1584ff47baaca2c94a1140a, type: 2}
+  trailRenderer: {fileID: 2930887505997130247}
   hitModule: {fileID: 7934436409592179276}
   rb2D: {fileID: 1888783830066518350}
   fsm: {fileID: 4013798012410791959}

@@ -21,6 +21,7 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private LayerMask originMask;
     [SerializeField] private GameObject playerHitParticle;
+    [SerializeField] private GameObject gameOverPanel;
     
     private float _playerMaxHp;
     private float _playerHp;
@@ -62,14 +63,17 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
                 if (value < _playerHp)
                 {
                     ObjectPooler.Instance.Get(playerHitParticle,gameObject.transform.position,new Vector3(-90,0,0));
+                    SoundManager.Instance.PlaySFX("PlayerHit");
                     CammeraManager.Instance.ShakeCamera(0.4f,0.2f);
                 }
                 _playerHp = value;
             }
 
-            if (value < 0)
+            if (value <= 0)
             {
                 _playerHp = 0;
+                Time.timeScale = 0;
+                gameOverPanel.SetActive(true);
             }
 
             if (value > PlayerMaxHp)
@@ -176,6 +180,7 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
         {
             float currentMaxExp = PlayerMaxExp;
             _playerExp -= currentMaxExp;
+            PlayerHp += 5f;
             PlayerLevel++;
         
             PlayerMaxExp = CalculateExpRequirement(PlayerLevel);
@@ -244,6 +249,9 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
     }
     private void Start()
     {
+        Time.timeScale = 1f;
+        gameOverPanel.SetActive(false);
+        SoundManager.Instance.PlayBGM("Battlefield");
         OnMaxExp += PlayerStatusUi.Instance.SetMaxExp;
         OnExp += PlayerStatusUi.Instance.SetExp;
         OnLevelUp += PlayerStatusUi.Instance.SetLevel;
@@ -282,6 +290,11 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
         PlayerAtk = atk;
     }
 
+    public void SetAtkSpeed(float atkSpeed)
+    {
+        PlayerAttackSpeed = atkSpeed;
+    }
+
     public void SetDef(float def)
     {
         PlayerDef = def;
@@ -298,8 +311,11 @@ public class PlayerStatus : HalfSingleMono<PlayerStatus>
 
     public void GetDamage(float damage, float infiniteTime)
     {
-        SetHp(PlayerHp - damage);
-
+        var realDamage = damage - PlayerDef;
+        if (realDamage > 0)
+        {
+            SetHp(PlayerHp - realDamage);
+        }
         if (_infiniteTimeFlow != null)
         {
             StopCoroutine(_infiniteTimeFlow);
